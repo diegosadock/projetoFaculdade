@@ -8,6 +8,7 @@
     src: url('MilkyNice-Clean.ttf') format('truetype'), url('MilkyNice-Clean.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+    font-size: clamp(0.9rem, 1vw, 1.5rem);
 }
 
 *{
@@ -254,4 +255,3 @@ footer {
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
-
