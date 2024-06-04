@@ -246,6 +246,14 @@ footer {
     border-radius: 5px;
 }
 
+.map {
+    padding: 10px 10px;
+    margin: 0 auto;
+    max-width: 99.8%;
+    width: 60%;
+    border-radius: 5px;
+}
+
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
