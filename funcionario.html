@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Trabalhe Conosco</title>
+    <link rel="stylesheet" href="funcionario.css">
+</head>
+
+<body>
+    <div class="form">
+        <form action="processar_formulario.php" method="post" onsubmit="return enviarFormulario()">
+            <h1>Trabalhe Conosco</h1>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome..." required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email..." required>
+
+            <label for="celular">Celular:</label>
+            <input type="number" id="celular" name="celular" placeholder="(xx) xxxxx-xxxx" required>
+
+            <br>
+
+            <label for="experiencia">Experiência Profissional:</label>
+            <select id="experiencia" name="experiencia">
+                <option value="sem_experiencia_profissional">SIM</option>
+                <option value="experiencia_profissional">NÃO</option>
+            </select>
+
+            <br><br>
+
+            <label for="educacao">Educação:</label>
+            <select id="educacao" name="educacao">
+                <option value="ensino_fundamental_incompleto">Ensino Fundamental Incompleto</option>
+                <option value="ensino_fundamental_completo">Ensino Fundamental Completo</option>
+                <option value="ensino_medio_incompleto">Ensino Médio Incompleto</option>
+                <option value="ensino_medio_completo">Ensino Médio Completo</option>
+                <option value="superior_incompleto">Superior Incompleto</option>
+                <option value="superior_completo">Superior Completo</option>
+                <option value="mestrado">Mestrado</option>
+                <option value="doutorado">Doutorado</option>
+            </select>
+
+            <br><br>
+
+            <label for="habilidades">Habilidades e Competências:</label>
+            <textarea id="habilidades" name="habilidades" rows="4"></textarea>
+
+            <br>
+
+            <input type="submit" class="btn" value="Enviar">
+        </form>
+    </div>
+</body>
+<div>
+    <iframe class="map-funcionario"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.611424558161!2d-43.3371099246868!3d-23.001312179188652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda3fddfcfad7%3A0x5a82fa8b1b14ae6b!2sCentro%20Universit%C3%A1rio%20IBMR%20Barra!5e0!3m2!1spt-BR!2sbr!4v1711047135205!5m2!1spt-BR!2sbr"
+        width="99.8%" height="500px" style="border: 0;"></iframe>
+</div>
+
+<script>
+    function enviarFormulario() {
+        alert('Formulário enviado!');
+        location.reload();
+        return false;
+    }
+</script>
+
+
+</html>

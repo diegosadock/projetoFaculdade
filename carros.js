@@ -70,6 +70,7 @@ let carros = [
 let divCarros = document.querySelector('.container-carros');
 
 // Itera sobre cada carro
+// Itera sobre cada carro
 for (let carro of carros) {
     // Cria o HTML para o carro
     let html = `
@@ -109,6 +110,75 @@ for (let carro of carros) {
     divCarros.innerHTML += html;
 }
 
+// Selecione todos os carros
+let carrosDiv = document.querySelectorAll('.carros');
+
+// Itera sobre cada carro
+for (let carro of carrosDiv) {
+    // Adicione um ouvinte de evento 'click' ao carro
+    carro.addEventListener('click', function () {
+        let carInfo = document.getElementById('carInfo');
+        carInfo.style.display = 'flex'; // Define o display para flex
+        carInfo.style.alignItems = 'center'; // Centraliza os itens na direção transversal
+
+        // Preencha o modal com as informações do carro
+        let infoText = document.createElement('div');
+        infoText.innerText = this.querySelector('ul').innerText;
+
+        let imgSrc = this.querySelector('img').src;
+        let imgElement = document.createElement('img');
+        imgElement.src = imgSrc;
+        imgElement.style.width = '600px';
+        imgElement.style.height = 'auto';
+
+        // Limpa o conteúdo anterior
+        carInfo.innerHTML = '';
+        carInfo.appendChild(imgElement); // Imagem do lado esquerdo
+        carInfo.appendChild(infoText); // Informações do lado direito
+
+        // Calcule o preço do aluguel (aqui você pode adicionar sua própria lógica para calcular o preço)
+        document.getElementById('rentPrice').innerText = 'Preço do aluguel: ' + calcularPrecoAluguel();
+        // Exiba o modal
+        document.getElementById('carModal').style.display = "block";
+    });
+}
+
+
+// Quando o usuário clica em <span> (x), fecha o modal
+document.getElementsByClassName("close")[0].onclick = function () {
+    document.getElementById('carModal').style.display = "none";
+}
+
+// Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
+window.onclick = function (event) {
+    if (event.target == document.getElementById('carModal')) {
+        document.getElementById('carModal').style.display = "none";
+    }
+}
+
+document.getElementById('rentPrice').innerText = 'Preço do aluguel: ';
+
+document.getElementById('calculate').addEventListener('click', function (event) {
+    event.preventDefault();
+    let hours = Number(document.getElementById('hours').value);
+    if (isNaN(hours)) {
+        document.getElementById('rentPrice').innerText = '⚠️ Por favor, insira um número válido de horas.';
+    } else {
+        document.getElementById('rentPrice').innerText = '💰 Preço do aluguel: R$' + calcularPrecoAluguel(hours) + ' \n\n📞 Telefone para contato: (11) 4002-8922';
+    }
+});
+
+
+function calcularPrecoAluguel(hours) {
+    let precoPadrao = 300;
+    if (isNaN(hours)) {
+        return '0 \n⚠ Insira o número de horas abaixo!';
+    } else {
+        return precoPadrao * hours;
+    }
+}
+
+
 // Primeiro, selecione a barra de pesquisa
 let searchBar = document.querySelector('.search-bar');
 
@@ -135,3 +205,5 @@ searchBar.addEventListener('input', function (e) {
         }
     }
 });
+
+

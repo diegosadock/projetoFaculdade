@@ -55,6 +55,87 @@
     font-size: 18px; /* texto maior */
 }
 
+/* O fundo do modal */
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: absolute; /* Fica em posição fixa na tela */
+    z-index: 1; /* Fica no topo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Habilita scroll se necessário */
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: rgba(64, 83, 67, 0.925); /* Fundo cinza claro */
+    margin: 15% auto; /* 15% do topo e centralizado */
+    padding: 20px;
+    border: 2px solid #058a13;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    width: 80%; /* 80% da largura */
+    border-radius: 15px; /* Bordas arredondadas */
+}
+
+/* Botão de fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #007BFF; /* Azul quando o mouse passa por cima ou está focado */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para o campo de entrada */
+input {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px 4px;
+}
+
+/* Estilo para o botão */
+button {
+    background-color: #4CAF50; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    border-radius: 10px;
+}
+
+button:hover {
+    opacity: 0.8; /* Adiciona um efeito de "hover" */
+} 
+
+@media only screen and (min-width: 68px) and (max-width: 1291px) {
+    .modal {
+      width: 100vh;
+      min-height: 600px; /* Ajusta a altura mínima para 600px */
+      max-height: 1024px; /* Ajusta a altura máxima para 1024px */
+    }
+    .modal-content {
+        width: 80vh;
+        min-height: 480px; /* 80% de 600px */
+        max-height: 819.2px; /* 80% de 1024px */
+    }
+}
+
 @media screen and (max-width: 600px) {
     .topnav a, .topnav input[type=text] {
       float: none;

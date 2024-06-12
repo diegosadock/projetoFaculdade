@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,33 @@
     <title>Carros disponíveis &#x1F697</title>
     <link rel="stylesheet" href="carros-style.css">
 </head>
+
 <body>
 
     <br><br>
 
     <div>
-            <input class="search-bar" type="text" placeholder="Search...">
+        <input class="search-bar" type="text" placeholder="Search...">
     </div>
 
     <br><br>
 
-    
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <p id="carInfo"></p>
+            <p id="rentPrice"></p>
+            <label for="hours">Quantas horas você vai ficar com o carro?</label>
+            <br><br>
+            <input type="number" id="hours" name="hours">
+            <button id="calculate">Calcular preço</button>
+        </div>
+    </div>
+
+
     <div class="container-carros">
         <script src="carros.js"></script>
-            
-        
     </div>
 </body>
+
 </html>
